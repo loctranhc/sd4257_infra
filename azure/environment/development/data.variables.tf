@@ -1,4 +1,9 @@
-variable "lab01_vm_vnet_name" {
+variable "vm_vnet_name" {
   type    = string
-  default = "lab01-loctranhc-vm-vnet"
+  default = "loctranhc-vm-vnet"
+}
+
+variable "vm_rg_name" {
+  type    = string
+  default = "loctranhc-vm-rg"
 }

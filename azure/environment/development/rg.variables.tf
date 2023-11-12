@@ -1,6 +1,6 @@
 variable "rg_name" {
   type    = string
-  default = "lab01-loctranhc-rg"
+  default = "loctranhc-rg"
 }
 
 variable "rg_location" {
