@@ -1,5 +1,5 @@
 module "resource_group" {
-  source = "../../modules/rg"
+  source = "../../modules/resource-group"
 
   rg_name     = var.rg_name
   rg_location = var.rg_location
@@ -45,7 +45,7 @@ module "acr_private_link" {
   rg_name               = module.resource_group.rg_name
   private_dns_zone_name = module.acr_private_dns_zone.private_dns_zone_name
   private_link_name     = var.acr_private_link_name
-  vnet_vm_id            = var.lab01_vm_vnet_id
+  vnet_vm_id            = data.azurerm_virtual_network.vm_vnet.id
 }
 
 module "acr_pep" {

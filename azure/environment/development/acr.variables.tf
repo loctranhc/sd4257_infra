@@ -18,11 +18,6 @@ variable "acr_private_link_name" {
   type = string
 }
 
-variable "lab01_vm_vnet_id" {
-  type    = string
-  default = data.azurerm_virtual_network.vm_vnet.id
-}
-
 variable "acr_private_dns_zone_name" {
   type    = string
   default = "privatelink.azurecr.io"
@@ -41,10 +36,6 @@ variable "acr_pep_name" {
 }
 
 variable "acr_service_connection_name" {
-  type = string
-}
-
-variable "acr_subresource_names" {
   type = string
 }
 
