@@ -42,3 +42,7 @@ variable "acr_service_connection_name" {
 variable "acr_subresource_names" {
   type = list(string)
 }
+
+variable "vm_peering_acr_name" {
+  type = string
+}

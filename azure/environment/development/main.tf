@@ -60,3 +60,12 @@ module "acr_pep" {
   subresource_names           = var.acr_subresource_names
   private_dns_zone_id         = module.acr_private_dns_zone.id
 }
+
+module "vm_peering_acr" {
+  source = "../../modules/vnet-peering"
+
+  rg_name = data.azurerm_virtual_network.vm_vnet.resource_group_name
+  remote_vnet_id = module.acr_vnet.id
+  source_vnet_name = data.azurerm_virtual_network.vm_vnet.name
+  vnet_peering_name = var.vm_peering_acr_name
+}
