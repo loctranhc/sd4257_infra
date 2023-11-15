@@ -46,3 +46,7 @@ variable "acr_subresource_names" {
 variable "vm_peering_acr_name" {
   type = string
 }
+
+variable "acr_peering_vm_name" {
+  type = string
+}
