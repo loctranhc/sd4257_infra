@@ -13,3 +13,11 @@ variable "aks_subnet_name" {
 variable "aks_address_prefixs" {
   type = list(string)
 }
+
+variable "aks_cluster_name" {
+  type = string
+}
+
+variable "aks_dns_prefix" {
+  type = string
+}
