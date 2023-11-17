@@ -21,3 +21,11 @@ variable "aks_cluster_name" {
 variable "aks_dns_prefix" {
   type = string
 }
+
+variable "vm_peering_aks_name" {
+  type = string
+}
+
+variable "aks_peering_vm_name" {
+  type = string
+}

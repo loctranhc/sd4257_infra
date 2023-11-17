@@ -25,3 +25,21 @@ module "aks_cluster" {
   dns_prefix       = var.aks_dns_prefix
   vnet_subnet_id   = module.aks_subnet.id
 }
+
+module "vm_peering_aks" {
+  source = "../../modules/vnet-peering"
+
+  rg_name = data.azurerm_virtual_network.vm_vnet.resource_group_name
+  remote_vnet_id = module.aks_vnet.id
+  source_vnet_name = data.azurerm_virtual_network.vm_vnet.name
+  vnet_peering_name = var.vm_peering_aks_name
+}
+
+module "aks_peering_vm" {
+  source = "../../modules/vnet-peering"
+
+  rg_name = module.resource_group.name
+  remote_vnet_id = data.azurerm_virtual_network.vm_vnet.id
+  source_vnet_name = module.aks_vnet.name
+  vnet_peering_name = var.aks_peering_vm_name
+}
